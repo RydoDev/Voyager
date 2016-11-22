@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'starsystem_id', 'name', 'email', 'password',
     ];
 
     /**
@@ -27,5 +27,10 @@ class User extends Authenticatable
     public function userDevices()
     {
         return $this->hasMany(UserDevices::class);
+    }
+
+    public function starsystem()
+    {
+        return $this->belongsTo(Starsystem::class);
     }
 }
